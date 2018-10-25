@@ -1,5 +1,112 @@
-$main-color: skyblue;
+@font-face {
+  font-family: 'BMJUA';
+  src: url('./font/BMJUAOTF00.eot');
+  src: url('./font/BMJUAOTF00.eot#iefix') format('embedded-opentype'),
+    ('./font/BMJUAOTF00.woff2') format('woff2'),
+    ('./font/BMJUAOTF00.woff') format('woff'),
+    ('./font/BMJUA_ttf.ttf') format('truetype');
+}
+
+$main-color: beige;
+$text-main-color: rgb(55, 170, 85);
+$text-strong-color: rgb(21, 139, 52);
+$sass-red: rgb(225, 81, 62);
 
 body {
   background-color: $main-color;
+  color: $text-main-color;
+  margin: 0;
+  padding: 0;
+  font-family: 'BMJUA';
+  line-height: 1.6rem;
+}
+
+.container {
+  width: 800px;
+  margin: 80px auto;
+  text-align: center;
+  position: relative;
+  padding-top: 10px;
+}
+
+.dog-img {
+  position: absolute;
+  width: 80px;
+  left: 60px;
+}
+
+h1 {
+  font-weight: normal;
+
+  span {
+    color: $text-strong-color;
+  }
+}
+
+p {
+  font-size: 1.3rem;
+  margin: 30px 0;
+  line-height: 1.8rem;
+}
+
+// input style
+.container input {
+  background: white;
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 0;
+  color: $text-strong-color;
+  font-family: 'BMJUA';
+  font-size: 1.2rem;
+  text-indent: 14px;
+  box-shadow: 3px 3px 10px 1px rgba(224, 223, 192, 0.5);
+}
+
+// form영역
+
+form {
+  display: inline-block;
+  border: 1px solid rgb(211, 215, 188);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.game-form button {
+  background: $text-main-color;
+  color: beige;
+  font-family: 'BMJUA';
+  font-size: 1.2rem;
+  height: 40px;
+  border: none;
+  border-radius: 2px;
+  padding: 0;
+}
+
+.game-try-button {
+  width: 50px;
+}
+
+form .game-retry-button {
+  background: $text-strong-color;
+  width: 80px;
+}
+
+
+// list영역
+
+.game-try-list {
+  margin-top: 40px;
+}
+
+.game-try-list li {
+  list-style: none;
+  font-size: 0.8rem;
+  display: inline-block;
+  padding: 0 auto;
+  margin: 0 20px;
+
+  span {
+    color: $sass-red;
+  }
 }

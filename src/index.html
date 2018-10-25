@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Good Dog</title>
+  <title>숫자야구게임</title>
   <link rel="stylesheet" href="./index.scss">
 </head>
+
 <body>
-  <h1>Good Dog !</h1>
+  <div class="container">
+    <!-- <img class="dog-img" src="./images/dog.png" alt="dog image"> -->
+    <h1>반려견이 먹은 <span>사료의 갯수</span>를 맞춰보시개!</h1>
+    <p>주인양반이 회사간 사이에<br>
+      내가 사료를 몇 알 먹었개 ?</p>
+    <form class="game-form">
+      <input type="text" class="game-input-1" maxlength="1">
+      <input type="text" class="game-input-10" maxlength="1">
+      <input type="text" class="game-input-100" maxlength="1">
+      <button class="game-try-button">개?</button>
+      <button class="game-retry-button">다시하개</button>
+    </form>
+    <ul class="game-try-list">
+      <li>1회
+        <input type="text" class="game-input-1" maxlength="1">
+        <input type="text" class="game-input-10" maxlength="1">
+        <input type="text" class="game-input-100" maxlength="1">
+        1멍 <span>1냠</span>
+      </li>
+      <li>1회
+        <input type="text" class="game-input-1" maxlength="1">
+        <input type="text" class="game-input-10" maxlength="1">
+        <input type="text" class="game-input-100" maxlength="1">
+        1멍 <span>1냠</span>
+      </li>
+    </ul>
+  </div>
 
   <script src="./index.js"></script>
 </body>
+
 </html>

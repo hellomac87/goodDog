@@ -22,7 +22,7 @@ for (let i = 0; i<3; i++) {
 }
 
 // 상태업데이트
-document.getElementById('test').textContent = state.randomNumber
+document.getElementById('test').textContent = state.randomNumber;
 
 
 document.querySelector('.game-try-button').addEventListener('click', e => {
@@ -52,6 +52,11 @@ function drawList() {
   document.querySelector('.game-try-list').insertAdjacentHTML("beforeend", listtemplete);
 }
 
-
-
+// :: user input click event listener
+document.querySelector('.game-form').querySelectorAll('input').forEach(inputElem => {
+  inputElem.addEventListener('click', (e) => {
+    // 클릭시 값을 빈 문자열로 만든다. :: 유저가 입력을 편하게 하기 위해
+    inputElem.value = '';
+  });
+});
 

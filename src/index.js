@@ -42,7 +42,7 @@ document.querySelector('.game-try-button').addEventListener('click', e => {
   console.log(state.userInput)
   drawList()
 
-  //가져온 input값이 화면에 출력되면, 초기화한다
+  //가져온 input값이 화면에 출력되면 초기화한다
   state.userInput = [];
 
 })

@@ -40,13 +40,16 @@ document.querySelector('.game-try-button').addEventListener('click', e => {
   state.userInput.push(parseInt(document.querySelector(".game-input-10").value));
   state.userInput.push(parseInt(document.querySelector(".game-input-100").value));
 
-  drawList();
   isWin();
+  drawList();
+
+
   //가져온 input값이 화면에 출력되면, 초기화한다
   state.userInput = [];
+  state.nyam = 0;
+  state.mung = 0;
 
 })
-
 
 // 화면에 출력
 function drawList() {

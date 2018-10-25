@@ -22,7 +22,7 @@
 - 어느 위에 있는지 확인 후 > 일을 진행 !
 - 일을 완료 후 > git status > add / commit / push origin 브랜치(내가현재있는브랜치)
 - git flow feature finish addcontents
-    - git flow feature(뭘 완료할지 우리는 피쳐를 완료할 거니까 피쳐브랜치를 써주고) finish addcontents (완료할 브랜치 이름을 기재)
+    - git flow feature(뭘 완료할지 우리는 피쳐를 완료할 거니까 피쳐브랜치를 써주고) finish addcontents(완료할 브랜치 이름만 기재)
 - finish를 하고나서 git branch 해보면 !
     - develop이랑 master만 남아있는 것을 확인하게됩니다
 - finish 후에 push를 해주는게 좋습니다 **기록을 위해서**

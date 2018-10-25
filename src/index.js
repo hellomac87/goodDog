@@ -28,15 +28,29 @@ document.getElementById('test').textContent = state.randomNumber;
 document.querySelector('.game-try-button').addEventListener('click', e => {
   e.preventDefault();
 
+  //input값이 비어있으면 출력하지 않는다
+  if (document.querySelector(".game-input-1").value === "" || document.querySelector(".game-input-10").value === "" || document.querySelector(".game-input-100").value === "") {
+    alert("값을 입력하시개");
+    return;
+  }
+
   //클릭 이벤트가 일어나면 input값을 가져와서 업데이트한다
   state.userInput.push(parseInt(document.querySelector(".game-input-1").value));
   state.userInput.push(parseInt(document.querySelector(".game-input-10").value));
   state.userInput.push(parseInt(document.querySelector(".game-input-100").value));
 
+<<<<<<< HEAD
   drawList();
   isWin();
   //가져온 input값이 화면에 출력되면, 초기화한다
+=======
+  console.log(state.userInput)
+  drawList()
+
+  //가져온 input값이 화면에 출력되면 초기화한다
+>>>>>>> 95b56c05db56e9f9e7d6e3268e2ecd8e648785e5
   state.userInput = [];
+
 })
 
 

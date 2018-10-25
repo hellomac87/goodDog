@@ -26,16 +26,15 @@ document.getElementById('test').textContent = state.randomNumber;
 
 
 document.querySelector('.game-try-button').addEventListener('click', e => {
-  e.preventDefault()
+  e.preventDefault();
 
   //클릭 이벤트가 일어나면 input값을 가져와서 업데이트한다
   state.userInput.push(parseInt(document.querySelector(".game-input-1").value));
   state.userInput.push(parseInt(document.querySelector(".game-input-10").value));
   state.userInput.push(parseInt(document.querySelector(".game-input-100").value));
 
-  console.log(state.userInput)
-  drawList()
-
+  drawList();
+  isWin();
   //가져온 input값이 화면에 출력되면, 초기화한다
   state.userInput = [];
 })
@@ -60,3 +59,21 @@ document.querySelector('.game-form').querySelectorAll('input').forEach(inputElem
   });
 });
 
+function isWin() {
+  console.log(state.randomNumber);
+  console.log(state.userInput);
+
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      if (i === j && state.randomNumber[i] === state.userInput[j]) {
+        state.nyam++;
+      }
+      if (i !== j && state.randomNumber[i] === state.userInput[j]) {
+        state.mung++;
+      }
+    }
+  }
+  console.log(`${state.nyam} naym`);
+  console.log(`${state.mung} mung`);
+
+}

@@ -13,7 +13,7 @@
   <div class="container">
     <img class="dog-img" src="./images/dog.png" alt="dog image">
     <h1>반려견이 먹은 <span>사료의 갯수</span>를 맞춰보시개!</h1>
-    <p>주인양반이 회사간 사이에<br>
+    <p class="question">주인양반이 회사간 사이에<br>
       내가 사료를 몇 알 먹었개 ?</p>
     <form class="game-form">
       <input type="text" class="game-input-1" maxlength="1">
@@ -36,6 +36,17 @@
         1멍 <span>1냠</span>
       </li>
     </ul>
+  </div>
+  <div class="correct-modal">
+    <p>정답이개 !</p>
+    <div class="modal-answer-text">정답은 <span id="modalAnswer">123</span> 개 먹었다개 !</div>
+    <div class="modal-button">
+      <button class="modal-retry-button">다시하개</button>
+      <button class="modal-close">닫기</button>
+    </div>
+  </div>
+  <div class="fail-modal">
+    <img src="./images/arrow.png" alt="arrow image">
   </div>
 
   <script src="./index.js"></script>

@@ -7,9 +7,8 @@ const state = {
   nyam : 0,
 };
 
+
 // 랜덤으로 중복되지 않는 세자리 숫자 생성
-
-
 for (let i = 0; i<3; i++) {
   // 0-9까지 정수를 랜덤으로 생성
   let random = Math.floor(Math.random() * 10);
@@ -42,6 +41,8 @@ document.querySelector('.game-try-button').addEventListener('click', e => {
 
   drawList();
   isWin();
+
+
   //가져온 input값이 화면에 출력되면, 초기화한다
   state.userInput = [];
 
@@ -81,7 +82,7 @@ function isWin() {
       }
     }
   }
-  console.log(`${state.nyam} naym`);
+  console.log(`${state.nyam} nyam`);
   console.log(`${state.mung} mung`);
 
 }

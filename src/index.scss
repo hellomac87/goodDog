@@ -1,11 +1,11 @@
-@font-face {
-  font-family: 'BMJUA';
-  src: url('./font/BMJUAOTF00.eot');
-  src: url('./font/BMJUAOTF00.eot#iefix') format('embedded-opentype'),
-    ('./font/BMJUAOTF00.woff2') format('woff2'),
-    ('./font/BMJUAOTF00.woff') format('woff'),
-    ('./font/BMJUA_ttf.ttf') format('truetype');
-}
+// @font-face {
+//   font-family: 'BMJUA';
+//   src: url('./font/BMJUAOTF00.eot');
+//   src: url('./font/BMJUAOTF00.eot#iefix') format('embedded-opentype'),
+//     ('./font/BMJUAOTF00.woff2') format('woff2'),
+//     ('./font/BMJUAOTF00.woff') format('woff'),
+//     ('./font/BMJUA_ttf.ttf') format('truetype');
+// }
 
 $main-color: beige;
 $text-main-color: rgb(55, 170, 85);
@@ -22,7 +22,7 @@ $sass-red: rgb(225, 81, 62);
 body {
   background-color: $main-color;
   color: $text-main-color;
-  font-family: 'BMJUA';
+  // font-family: 'BMJUA';
   line-height: 1.6rem;
   position: relative;
 }
@@ -129,7 +129,7 @@ form .game-retry-button {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  // display: none;
+  display: none;
 
   &.show {
     display: flex;

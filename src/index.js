@@ -38,7 +38,7 @@ function createRandomNumber(){
     }
   }
   // text
-  document.getElementById('test').textContent = state.randomNumber;
+  // document.getElementById('test').textContent = state.randomNumber;
   // 모달 정답창에 정답 쓰기
   document.getElementById('modalAnswer').textContent = state.randomNumber;
 }
@@ -78,11 +78,12 @@ function drawList() {
     return;
   }
 
-  const listtemplete = `<li>1회
+  const listtemplete = `<li>
         <input value="${state.userInput[0]}" type="text" class="game-input-1" maxlength="1" readonly>
         <input value="${state.userInput[1]}" type="text" class="game-input-10" maxlength="1" readonly>
         <input value="${state.userInput[2]}" type="text" class="game-input-100" maxlength="1" readonly>
-        <span class="mung">${state.mung} 멍</span> <span class="nyam">${state.nyam} 냠</span>
+        <span class="nyam">${state.nyam} 냠</span>
+        <span class="mung">${state.mung} 멍</span>
       </li>`;
   document.querySelector('.game-try-list').insertAdjacentHTML("beforeend", listtemplete);
 }

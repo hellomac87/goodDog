@@ -9,7 +9,17 @@ const state = {
 
 function init(){
   // 게임 상태 및 화면 초기화 함수
+  state.randomNumber = []; // 문제 배열을 비운다.
   createRandomNumber(); // 랜덤으로 중복되지 않는 세자리 숫자 생성
+  stateInit(); // 상태초기화 함수 실행
+  drawList();
+}
+
+function stateInit(){
+  // 상태 초기화 함수
+  state.userInput = [];
+  state.nyam = 0;
+  state.mung = 0;
 }
 
 function createRandomNumber(){
@@ -25,7 +35,6 @@ function createRandomNumber(){
       state.randomNumber.push(random)
     }
   }
-
   // text
   document.getElementById('test').textContent = state.randomNumber;
 }
@@ -47,17 +56,17 @@ document.querySelector('.game-try-button').addEventListener('click', e => {
 
   isWin();
   drawList();
-
-
   //가져온 input값이 화면에 출력되면, 초기화한다
-  state.userInput = [];
-  state.nyam = 0;
-  state.mung = 0;
-
-})
+  stateInit();
+});
 
 // 화면에 출력
 function drawList() {
+  if (state.userInput[0] === undefined && state.userInput[1] === undefined && state.userInput[2] === undefined){
+    document.querySelector('.game-try-list').innerHTML = ''
+    return;
+  }
+
   const listtemplete = `<li>1회
         <input value="${state.userInput[0]}" type="text" class="game-input-1" maxlength="1" readonly>
         <input value="${state.userInput[1]}" type="text" class="game-input-10" maxlength="1" readonly>
@@ -73,6 +82,11 @@ document.querySelector('.game-form').querySelectorAll('input').forEach(inputElem
     // 클릭시 값을 빈 문자열로 만든다. :: 유저가 입력을 편하게 하기 위해
     inputElem.value = '';
   });
+});
+
+document.querySelector('.game-retry-button').addEventListener('click', (e) => {
+  e.preventDefault();
+  init();
 });
 
 function isWin() {

@@ -100,7 +100,8 @@ form .game-retry-button {
 // list영역
 
 .game-try-list {
-  margin-top: 40px;
+  width:500px;
+  margin: 40px auto;
 }
 
 .game-try-list li {
@@ -121,7 +122,7 @@ form .game-retry-button {
 //modal 영역
 
 .correct-modal {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.8);
   width: 600px;
   height: 400px;
   position: absolute;

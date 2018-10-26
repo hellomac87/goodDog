@@ -37,24 +37,28 @@ function createRandomNumber(){
   }
   // text
   document.getElementById('test').textContent = state.randomNumber;
+  // 모달 정답창에 정답 쓰기
+  document.getElementById('modalAnswer').textContent = state.randomNumber;
 }
 
 // 상태업데이트
 document.querySelector('.game-try-button').addEventListener('click', e => {
   e.preventDefault();
 
-  //input값이 비어있으면 출력하지 않는다
+  // input값이 비어있으면 출력하지 않는다
   if (document.querySelector(".game-input-1").value === "" || document.querySelector(".game-input-10").value === "" || document.querySelector(".game-input-100").value === "") {
     alert("값을 입력하시개");
     return;
   }
-
   //클릭 이벤트가 일어나면 input값을 가져와서 업데이트한다
-  state.userInput.push(parseInt(document.querySelector(".game-input-1").value));
-  state.userInput.push(parseInt(document.querySelector(".game-input-10").value));
-  state.userInput.push(parseInt(document.querySelector(".game-input-100").value));
+  document.querySelectorAll('.game-form input').forEach((input, index) => {
+    state.userInput.push(parseInt(input.value));
+  });
 
-  isWin();
+  if (isWin()){
+    // 승리시
+    document.querySelector('.correct-modal').classList.add('show');
+  }
   drawList();
   //가져온 input값이 화면에 출력되면, 초기화한다
   stateInit();
@@ -84,9 +88,21 @@ document.querySelector('.game-form').querySelectorAll('input').forEach(inputElem
   });
 });
 
+// :: game-retry-button click event listener
 document.querySelector('.game-retry-button').addEventListener('click', (e) => {
   e.preventDefault();
   init();
+});
+
+// :: 모달창 버튼 클릭 이벤트
+// 다시하기 버튼
+document.querySelector('.modal-retry-button').addEventListener('click', (e) => {
+  init();
+  document.querySelector('.correct-modal').classList.remove('show');
+});
+// 닫기 버튼
+document.querySelector('.modal-close').addEventListener('click', (e) => {
+  document.querySelector('.correct-modal').classList.remove('show');
 });
 
 function isWin() {
@@ -106,6 +122,9 @@ function isWin() {
   console.log(`${state.nyam} nyam`);
   console.log(`${state.mung} mung`);
 
+  if(state.nyam === 3){
+    return true;
+  }
 }
 
 init();

@@ -13,6 +13,8 @@ function init(){
   createRandomNumber(); // 랜덤으로 중복되지 않는 세자리 숫자 생성
   stateInit(); // 상태초기화 함수 실행
   drawList();
+  document.querySelector('.correct-modal').classList.remove('show');
+  document.querySelector('.fail-modal').classList.remove('show');
 }
 
 function stateInit(){
@@ -44,7 +46,10 @@ function createRandomNumber(){
 // 상태업데이트
 document.querySelector('.game-try-button').addEventListener('click', e => {
   e.preventDefault();
-
+  if (document.querySelectorAll('.game-try-list li').length === 9){
+    document.querySelector('.fail-modal').classList.add('show');
+    return;
+  }
   // input값이 비어있으면 출력하지 않는다
   if (document.querySelector(".game-input-1").value === "" || document.querySelector(".game-input-10").value === "" || document.querySelector(".game-input-100").value === "") {
     alert("값을 입력하시개");
@@ -59,7 +64,9 @@ document.querySelector('.game-try-button').addEventListener('click', e => {
     // 승리시
     document.querySelector('.correct-modal').classList.add('show');
   }
+
   drawList();
+
   //가져온 input값이 화면에 출력되면, 초기화한다
   stateInit();
 });

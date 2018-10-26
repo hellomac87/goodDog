@@ -110,7 +110,10 @@ form .game-retry-button {
   padding: 0 auto;
   margin: 20px;
 
-  span {
+  .mung {
+    color: $text-main-color;
+  }
+  .nyam {
     color: $sass-red;
   }
 }
